@@ -1,0 +1,25 @@
+{
+  "name": "experiment",
+  "version": "1.0.0",
+  "description": "this is my experiment of studing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xJesson/experiment.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "xluobin@163.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xJesson/experiment/issues"
+  },
+  "homepage": "https://github.com/xJesson/experiment#readme",
+  "dependencies": {
+    "zone.js": "^0.8.12"
+  }
+}
