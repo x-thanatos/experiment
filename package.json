@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/xJesson/experiment#readme",
   "dependencies": {
+    "rxjs": "^5.4.2",
     "zone.js": "^0.8.12"
   }
 }
