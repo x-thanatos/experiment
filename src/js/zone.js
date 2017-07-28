@@ -9,4 +9,3 @@ Zone.current.fork({}).run(() => {
 })
 
 console.log(`outside: ${!!Zone.current.inside}`)
-
