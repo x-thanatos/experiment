@@ -3,7 +3,7 @@
  */
 (function () {
     const Jessie = {
-        name: 'Jesson',
+        name: 'Jessie',
         say: function (age, gender = 'girl') {
             console.log(`I am ${this.name} and ${age} years old.[${gender}]`)
         }

@@ -4,8 +4,8 @@
 require('zone.js')
 
 Zone.current.fork({}).run(() => {
-    Zone.current.inside = true
-    setTimeout(() => console.log(`inside: ${Zone.current.inside}`))
+    Zone.current.param = true
+    setTimeout(() => console.log(`inside: ${Zone.current.param}`))
 })
 
-console.log(`outside: ${!!Zone.current.inside}`)
+console.log(`outside: ${!!Zone.current.param}`)
