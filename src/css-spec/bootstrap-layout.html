@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="./bootstrap.css">
+    <title>Grid layout</title>
+    <style>
+        h6 {
+            margin-top: 20px;
+        }
+
+        .body-0 >div{
+            /*padding: 0 20px 0 0;*/
+            height: 100px;
+        }
+        .body-0 div.inside{
+            /*padding-right: 20px;*/
+            /*height: 100px;*/
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="container">
+
+<section class="header row justify-content-center border border-success">
+    <h1 class="m-0">栅格系统</h1>
+</section>
+
+<h6>只填充4个栅格，固定间距</h6>
+<section class="body-0 text-center row border border-primary mt-2">
+    <div class="col-sm-3">
+        <div class="inside bg-warning">机组状态</div>
+    </div>
+    <div class="col-sm-3">
+        <div class="inside bg-info">室外温度</div>
+    </div>
+    <div class="col-sm-3">
+        <div class="inside bg-danger">湿度</div>
+    </div>
+    <div class="col-sm-3">
+        <div class="inside bg-success">报警设置</div>
+    </div>
+</section>
+
+<h6>填充足12个栅格，并且均分</h6>
+<section class="body-1 text-center row border border-primary mt-2">
+    <div class="col-sm-2 bg-primary">1</div>
+    <div class="col-sm-2 bg-danger">2</div>
+    <div class="col-sm-2 bg-info">3</div>
+    <div class="col-sm-2 bg-light">4</div>
+    <div class="col-sm-2 bg-warning">5</div>
+    <div class="col-sm-2 bg-success">6</div>
+</section>
+
+<h6>填充足12个栅格，不均分</h6>
+<section class="body-2 text-center row border border-primary mt-2">
+    <div class="col-sm-1 bg-primary">1</div>
+    <div class="col-sm-2 bg-danger">2</div>
+    <div class="col-sm-1 bg-info">3</div>
+    <div class="col-sm-3 bg-light">4</div>
+    <div class="col-sm-2 bg-warning">5</div>
+    <div class="col-sm-3 bg-success">6</div>
+</section>
+
+<h6>填充不足12个栅格</h6>
+<section class="body-3 text-center row border border-primary mt-2">
+    <div class="col-sm-1 bg-info">1</div>
+    <div class="col-sm-2 bg-danger">2</div>
+    <div class="col-sm-3 bg-warning">3</div>
+    <div class="col-sm-4 bg-success">4</div>
+</section>
+
+<h6>只填充3个栅格，自动补齐一边空余栅格</h6>
+<section class="body-4 text-center row border border-primary mt-2">
+    <div class="col"></div>
+    <div class="col-sm-1 bg-info">1</div>
+    <div class="col-sm-2 bg-danger">2</div>
+</section>
+
+<h6>只填充3个栅格，自动补齐两边空余栅格</h6>
+<section class="body-5 text-center row border border-primary mt-2">
+    <div class="col"></div>
+    <div class="col-sm-1 bg-info">1</div>
+    <div class="col-sm-2 bg-danger">2</div>
+    <div class="col"></div>
+</section>
+
+<h6>只填充3个栅格，并且内容栅格不连续，自动补齐剩余栅格</h6>
+<section class="body-5 text-center row border border-primary mt-2">
+    <div class="col"></div>
+    <div class="col-sm-1 bg-info">1</div>
+    <div class="col"></div>
+    <div class="col-sm-2 bg-danger">2</div>
+    <div class="col"></div>
+</section>
+
+<h6>只填充2个栅格，使其出现在12栅格系统的第4个栅格后</h6>
+<section class="body-5 text-center row border border-primary mt-2">
+    <div class="col-4"></div>
+    <div class="col-sm-2 bg-info">1</div>
+</section>
+
+<section class="footer row justify-content-center border border-danger mt-2">
+    <h6 class="text-muted m-0">这是页脚</h6>
+</section>
+
+</body>
+</html>
