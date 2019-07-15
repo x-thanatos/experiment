@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>requestAnimationFrame</title>
     <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         .bar {
             width: 0;
             height: 50px;
@@ -18,11 +29,11 @@
         }
 
         .red {
-            background: red;
+            background: #ff0000;
         }
 
         .yellow {
-            background: #c69500;
+            background: #ffff00;
         }
 
         .orange {
@@ -36,70 +47,42 @@
         .black {
             background: #000;
         }
+
     </style>
 </head>
+
 <body>
-<div class="bar green"></div>
-<div class="bar red"></div>
-<div class="bar blue"></div>
-<div class="bar yellow"></div>
-<div class="bar orange"></div>
-<div class="bar gray"></div>
-<div class="bar black"></div>
+    <div class="bar green"></div>
+    <div class="bar red"></div>
+    <div class="bar blue"></div>
+    <div class="bar yellow"></div>
+    <div class="bar orange"></div>
+    <div class="bar gray"></div>
+    <div class="bar black"></div>
 </body>
 <script>
     let width = 0
     const domBar = document.querySelectorAll('.bar')
 
-    function render1() {
-        domBar[0].style.width = `${width++}px`
-        if (width <= document.body.clientWidth * 1000) {
-            requestAnimationFrame(render1)
+    function renderer(index) {
+        let width = 0
+        let timer = -1;
+        let dom = domBar[index]
+        console.log(dom)
+        if (dom) {
+            return function render() {
+                cancelAnimationFrame(timer)
+                domBar[index].style.width = `${width++}px`
+                if (width < document.body.clientWidth) {
+                    timer = requestAnimationFrame(render)
+                }
+            }
         }
+        return ''
     }
+    var render = renderer(0);
+    render();
 
-    function render2() {
-        domBar[1].style.width = `${width++}px`
-        if (width <= document.body.clientWidth) {
-            requestAnimationFrame(render2)
-        }
-    }
-
-    function render3() {
-        domBar[2].style.width = `${width++}px`
-        if (width <= document.body.clientWidth) {
-            requestAnimationFrame(render3)
-        }
-    }
-
-    function render4() {
-        domBar[3].style.width = `${width++}px`
-        if (width <= document.body.clientWidth) {
-            requestAnimationFrame(render4)
-        }
-    }
-
-    function render5() {
-        domBar[4].style.width = `${width++}px`
-        if (width <= document.body.clientWidth) {
-            requestAnimationFrame(render5)
-        }
-    }
-
-    function render6() {
-        domBar[5].style.width = `${width++}px`
-        if (width <= document.body.clientWidth) {
-            requestAnimationFrame(render6)
-        }
-    }
-
-    render1()
-    render2()
-    render3()
-    render4()
-    render5()
-    render6()
-
-    window.addEventListener('resize', render1)
 </script>
+
 </html>
