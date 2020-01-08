@@ -1,6 +1,6 @@
 (function (window) {
     var constant = {
-        min: 0,
+        min: 1,
         max: 50,
         size: 20,
         interval: 50,
@@ -31,7 +31,7 @@
     }
 
     function setMinMax() {
-        constant.min = parseInt(dom.min.value) || 0;
+        constant.min = parseInt(dom.min.value) || 1;
         constant.max = parseInt(dom.max.value) || 50;
         constant.size = parseInt(dom.size.value) || 20;
     }

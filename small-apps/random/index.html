@@ -23,7 +23,14 @@
             // set 1rem = viewWidth / 10
             function setRemUnit() {
                 var rem = docEl.clientWidth / 10
-                docEl.style.fontSize = rem + 'px'
+                if (rem < 80) {
+                    docEl.style.fontSize = '80px'
+                    // docEl.style.fontSize = rem + 'px'
+                } else if (rem > 128) {
+                    docEl.style.fontSize = '128px'
+                } else {
+                    docEl.style.fontSize = rem + 'px'
+                }
             }
             setRemUnit()
             // reset rem unit on page resize
@@ -48,7 +55,7 @@
         }(window, document))
 
     </script>
-    <link href="./radom.css" rel="stylesheet" />
+    <link href="./index.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -76,11 +83,11 @@
         <ul class="input">
             <li>
                 <label for="min">最小值：</label>
-                <input type="number" id="min" min="0" placeholder="默认值：0">
+                <input type="number" id="min" placeholder="默认值：1">
             </li>
             <li>
                 <label for="max">最大值：</label>
-                <input type="number" id="max" min="20" placeholder="默认值：50">
+                <input type="number" id="max" placeholder="默认值：50">
             </li>
             <li>
                 <label for="size">结果数：</label>
@@ -89,6 +96,6 @@
         </ul>
     </div>
 </body>
-<script src="./radom.js"></script>
+<script src="./index.js"></script>
 
 </html>
