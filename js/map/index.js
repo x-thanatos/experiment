@@ -19,7 +19,6 @@ function init() {
 
     dom.input.keyup(function (e) {
         lastTime = e.timeStamp
-        console.log(e)
 
         const timer = setTimeout(function () {
             //利用event的timeStamp来标记时间，这样每次的keyup事件都会修改lastTime的值，注意lastTime必需为全局变量
